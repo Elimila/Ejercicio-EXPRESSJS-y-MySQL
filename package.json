@@ -1,0 +1,28 @@
+{
+  "name": "ejercicio-expressjs-y-mysql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "mysql2": "^3.14.1",
+    "nodemon": "^3.1.10"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Elimila/Ejercicio-EXPRESSJS-y-MySQL.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Elimila/Ejercicio-EXPRESSJS-y-MySQL/issues"
+  },
+  "homepage": "https://github.com/Elimila/Ejercicio-EXPRESSJS-y-MySQL#readme"
+}
+
