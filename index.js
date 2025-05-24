@@ -65,21 +65,7 @@ app.post('/addCategory', (req, res) => {
   })
 })
 
-app.get('/products', (req, res) => {
-  const sql = 'SELECT * FROM products'
-  db.query(sql, (err, result) => {
-    if (err) throw err
-    res.send(result)
-  })
-})
 
-app.get('/categories', (req, res) => {
-  const sql = 'SELECT * FROM categories'
-  db.query(sql, (err, result) => {
-    if (err) throw err
-    res.send(result)
-  })
-})
 
 // Ejercicio 3
 
@@ -114,6 +100,8 @@ app.put('/updateCategory/:id', (req, res) => {
 
 // Ejercicio 4
 
+
+
 // Mostrar todos los productos
 app.get('/products', (req, res) => {
   const sql = 'SELECT * FROM products'
@@ -132,7 +120,17 @@ app.get('/categories', (req, res) => {
   })
 })
 
-// Mostrar productos con sus categorías (relación no implementada aún)
+// Mostrar productos con sus categorías 
+
+// 1ero se Agrega columna category_id a la tabla products 
+app.get('/addCategoryIdColumn', (req, res) => {
+  const sql = 'ALTER TABLE products ADD category_id INT'
+  db.query(sql, (err, result) => {
+    if (err) throw err
+    res.send('Columna category_id agregada a products')
+  })
+})
+
 app.get('/products-with-categories', (req, res) => {
   const sql = `
     SELECT products.id, products.name AS product_name, products.type, products.quantity, products.precio,
@@ -145,7 +143,7 @@ app.get('/products-with-categories', (req, res) => {
     res.send(result)
   })
 })
-// ⚠️ Este endpoint funcionará solo si luego agregamos la columna category_id a la tabla products
+
 
 // Mostrar producto por ID
 app.get('/product/:id', (req, res) => {
