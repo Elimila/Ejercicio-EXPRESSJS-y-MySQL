@@ -1,0 +1,5 @@
+# Ignorar node_modules
+/node_modules
+
+# Ignorar archivo de base de datos con credenciales
+/MVC/config/database.js
