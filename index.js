@@ -1,6 +1,9 @@
 const express = require("express")
 const app = express()
 const mysql = require('mysql2')
+const productRoutes = require('./MVC/routes/products')
+const categoryRoutes = require('./MVC/routes/categories')
+
 app.use(express.json())
 
 const db = mysql.createConnection({
@@ -193,6 +196,10 @@ app.delete('/deleteProduct/:id', (req, res) => {
     res.send('Producto eliminado')
   })
 })
+
+app.use('/products', productRoutes)
+app.use('/categories', categoryRoutes)
+
 
 app.listen(3000, () => {
   console.log('Server running on port 3000')
